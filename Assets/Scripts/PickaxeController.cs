@@ -6,22 +6,23 @@ namespace Plattko
 {
     public class PickaxeController : MonoBehaviour
     {
-        [SerializeField] private Rigidbody2D rb;
-        [SerializeField] private TargetJoint2D targetJoint;
 
-        private Rigidbody2D draggerRB;
-        private TargetJoint2D draggerTargetJoint;
+        [SerializeField] private Rigidbody2D cursorPointRB;
+        [SerializeField] private TargetJoint2D cursorPointTargetJoint;
+
+        private Rigidbody2D rb;
+        private TargetJoint2D targetJoint;
 
         private Vector3 mouseWorldPos;
 
-        [SerializeField] private float maxStationarySpin = 100f;
-        [SerializeField] private float stationaryAngularDrag = 25f;
+        [SerializeField] private float maxStationarySpin = 300f;
+        [SerializeField] private float stationaryAngularDrag = 10f;
         private float defaultAngularDrag = 0.05f;
         
         void Start()
         {
-            draggerRB = GetComponent<Rigidbody2D>();
-            draggerTargetJoint = GetComponent<TargetJoint2D>();
+            rb = GetComponent<Rigidbody2D>();
+            targetJoint = GetComponent<TargetJoint2D>();
         }
 
         void Update()
@@ -32,22 +33,27 @@ namespace Plattko
 
             // Set target position of both the cursor point and pickaxe to the mouse's world position
             targetJoint.target = mouseWorldPos;
-            draggerTargetJoint.target = mouseWorldPos;
+            cursorPointTargetJoint.target = mouseWorldPos;
 
             // Clamp the pickaxe's maximum angular velocity to prevent it from spinning too much
-            //Debug.Log(draggerRB.velocity.magnitude);
-            if (draggerRB.velocity.magnitude < 30f)
+            //Debug.Log(cursorPointRB.velocity.magnitude);
+            if (cursorPointRB.velocity.magnitude < 30f)
             {
                 rb.angularVelocity = Mathf.Clamp(rb.angularVelocity, -maxStationarySpin, maxStationarySpin);
             }
 
+            if (cursorPointRB.velocity.magnitude > 30f)
+            {
+                Debug.Log("<color=purple>Cursor velocity: </color>" + cursorPointRB.velocity.magnitude);
+            }
+
             // Increase the pickaxe's gravity scale when stationary to make it rest at the bottom more quickly
-            if (draggerRB.velocity.magnitude < 0.1f)
+            if (cursorPointRB.velocity.magnitude < 0.1f)
             {
                 rb.gravityScale = 3f;
 
                 // Additional angular drag when the pickaxe is rotated almost straight down to prevent an endless pendulum swing
-                Debug.Log(NormaliseAngle(rb.rotation));
+                //Debug.Log(NormaliseAngle(rb.rotation));
                 if (NormaliseAngle(rb.rotation) > 160f && NormaliseAngle(rb.rotation) < 200f)
                 {
                     rb.angularDrag = stationaryAngularDrag;
