@@ -37,7 +37,7 @@ namespace Plattko
 
             // Clamp the pickaxe's maximum angular velocity to prevent it from spinning too much
             //Debug.Log(cursorPointRB.velocity.magnitude);
-            if (cursorPointRB.velocity.magnitude < 30f)
+            if (cursorPointRB.velocity.magnitude < 500f)
             {
                 rb.angularVelocity = Mathf.Clamp(rb.angularVelocity, -maxStationarySpin, maxStationarySpin);
             }
