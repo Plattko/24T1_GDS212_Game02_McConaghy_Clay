@@ -20,7 +20,7 @@ namespace Plattko
             pickaxeRB = transform.parent.GetComponent<Rigidbody2D>();
             mass = pickaxeRB.mass;
 
-            InvokeRepeating("AngularVelocity", 0f, 2f);
+            //InvokeRepeating("AngularVelocity", 0f, 2f);
         }
 
         private void FixedUpdate()

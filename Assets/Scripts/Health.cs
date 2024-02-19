@@ -21,6 +21,13 @@ namespace Plattko
             currentHealth -= damage;
             Debug.Log("Current health: " + currentHealth);
 
+            // Spawn damage number
+            DamageNumber damageNumber = GetComponent<DamageNumber>();
+            if (damageNumber != null)
+            {
+                GetComponent<DamageNumber>().SpawnDamageNumber(damage);
+            }
+
             if (currentHealth <= 0f)
             {
                 Destroy(gameObject);

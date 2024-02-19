@@ -42,10 +42,10 @@ namespace Plattko
                 rb.angularVelocity = Mathf.Clamp(rb.angularVelocity, -maxStationarySpin, maxStationarySpin);
             }
 
-            if (cursorPointRB.velocity.magnitude > 30f)
-            {
-                Debug.Log("<color=purple>Cursor velocity: </color>" + cursorPointRB.velocity.magnitude);
-            }
+            //if (cursorPointRB.velocity.magnitude > 30f)
+            //{
+            //    Debug.Log("<color=purple>Cursor velocity: </color>" + cursorPointRB.velocity.magnitude);
+            //}
 
             // Increase the pickaxe's gravity scale when stationary to make it rest at the bottom more quickly
             if (cursorPointRB.velocity.magnitude < 0.1f)
