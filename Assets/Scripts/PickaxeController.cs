@@ -6,7 +6,6 @@ namespace Plattko
 {
     public class PickaxeController : MonoBehaviour
     {
-
         [SerializeField] private Rigidbody2D cursorPointRB;
         [SerializeField] private TargetJoint2D cursorPointTargetJoint;
 
@@ -37,12 +36,14 @@ namespace Plattko
 
             // Clamp the pickaxe's maximum angular velocity to prevent it from spinning too much
             //Debug.Log(cursorPointRB.velocity.magnitude);
-            if (cursorPointRB.velocity.magnitude < 500f)
-            {
-                rb.angularVelocity = Mathf.Clamp(rb.angularVelocity, -maxStationarySpin, maxStationarySpin);
-            }
+            //if (cursorPointRB.velocity.magnitude < 500f)
+            //{
+            //    rb.angularVelocity = Mathf.Clamp(rb.angularVelocity, -maxStationarySpin, maxStationarySpin);
+            //}
 
-            //if (cursorPointRB.velocity.magnitude > 30f)
+            rb.angularVelocity = Mathf.Clamp(rb.angularVelocity, -maxStationarySpin, maxStationarySpin);
+
+            //if (cursorPointRB.velocity.magnitude > 500f)
             //{
             //    Debug.Log("<color=purple>Cursor velocity: </color>" + cursorPointRB.velocity.magnitude);
             //}

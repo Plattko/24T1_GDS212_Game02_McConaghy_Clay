@@ -55,7 +55,7 @@ namespace Plattko
             if (health != null && angularVelocity > 250f)
             {
                 health.TakeDamage(momentumDamage);
-                ApplyKnockback();
+                //ApplyKnockback();
             }
         }
 
