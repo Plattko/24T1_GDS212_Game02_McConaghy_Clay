@@ -1150,7 +1150,7 @@ GameObject:
   - component: {fileID: 828499696}
   - component: {fileID: 828499699}
   - component: {fileID: 828499698}
-  - component: {fileID: 828499697}
+  - component: {fileID: 828499700}
   m_Layer: 0
   m_Name: PickaxeHead
   m_TagString: Untagged
@@ -1173,20 +1173,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 871726647}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &828499697
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 828499695}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11e78cdac861c654dbad4974327ec418, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerCollider: {fileID: 828499698}
-  boxCollider: {fileID: 828499699}
 --- !u!61 &828499698
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1277,6 +1263,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.875, y: 0.28125}
   m_EdgeRadius: 0
+--- !u!114 &828499700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 828499695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ec914ca9fe2f5a4189c0ba9edabe0e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerCollider: {fileID: 828499698}
+  boxCollider: {fileID: 828499699}
+  minimumRotationSpeed: 300
 --- !u!1 &871726641
 GameObject:
   m_ObjectHideFlags: 0
@@ -1314,8 +1315,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cursorPointRB: {fileID: 1825163341}
   cursorPointTargetJoint: {fileID: 1825163343}
-  maxStationarySpin: 300
+  maxSpin: 300
   stationaryAngularDrag: 10
+  rotationSpeed: 0
 --- !u!257 &871726643
 TargetJoint2D:
   m_ObjectHideFlags: 0
@@ -1396,7 +1398,7 @@ Rigidbody2D:
   m_Mass: 100
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -1483,7 +1485,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 871726641}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 788d0a1370ed4b443a527da88cc51fa3, type: 3}
   m_Name: 
@@ -1495,7 +1497,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 871726641}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4706f047256e594f9267d54aac69300, type: 3}
   m_Name: 
@@ -2577,8 +2579,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cursorPointRB: {fileID: 1825163341}
   cursorPointTargetJoint: {fileID: 1825163343}
-  maxStationarySpin: 300
+  maxSpin: 300
   stationaryAngularDrag: 10
+  rotationSpeed: 0
 --- !u!1 &2144760917
 GameObject:
   m_ObjectHideFlags: 0
