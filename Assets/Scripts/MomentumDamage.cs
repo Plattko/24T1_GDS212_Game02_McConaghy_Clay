@@ -52,7 +52,7 @@ namespace Plattko
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            Debug.Log("<color=red>[Momentum Damage] Collision velocity was: </color>" + pickaxeController.rotationSpeed);
+            //Debug.Log("<color=red>[Momentum Damage] Collision velocity was: </color>" + pickaxeController.rotationSpeed);
             //float velocityValue = pickaxeController.rotationSpeed;
             //averageCollisionVelocity.Add(velocityValue);
             //Debug.Log("<color=red>[Momentum Damage] Average collision velocity: </color>" + averageCollisionVelocity.Average());
