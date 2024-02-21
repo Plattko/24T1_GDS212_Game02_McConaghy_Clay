@@ -6,11 +6,17 @@ namespace Plattko
 {
     public class Health : MonoBehaviour
     {
+        private DamageNumber damageNumber;
+        private TileController tileController;
+        
         public int maxHealth;
         public float currentHealth { get; private set; }
 
         private void Start()
         {
+            damageNumber = GetComponent<DamageNumber>();
+            tileController = GetComponent<TileController>();
+
             currentHealth = maxHealth;
             Debug.Log("Current health: " + currentHealth);
         }
@@ -22,15 +28,20 @@ namespace Plattko
             Debug.Log("Current health: " + currentHealth);
 
             // Spawn damage number
-            DamageNumber damageNumber = GetComponent<DamageNumber>();
             if (damageNumber != null)
             {
-                GetComponent<DamageNumber>().SpawnDamageNumber(damage);
+                damageNumber.SpawnDamageNumber(damage);
             }
 
-            if (currentHealth <= 0f)
+            // If script is attached to a tile, update tile
+            if (tileController != null)
             {
-                Destroy(gameObject);
+                tileController.UpdateTile(maxHealth, currentHealth);
+
+                if (currentHealth <= 0f)
+                {
+                    tileController.DestroyTile();
+                }
             }
         }
     }
