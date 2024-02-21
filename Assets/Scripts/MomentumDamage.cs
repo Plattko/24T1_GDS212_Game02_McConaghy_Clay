@@ -30,25 +30,25 @@ namespace Plattko
             mass = pickaxeRB.mass;
         }
 
-        private void OnTriggerEnter2D(Collider2D collision)
-        {
-            Debug.Log("<color=orange>[Momentum Damage] Trigger velocity was: </color>" + pickaxeController.rotationSpeed);
-            //float velocityValue = pickaxeController.rotationSpeed;
-            //averageTriggerVelocity.Add(velocityValue);
-            //Debug.Log("<color=orange>[Momentum Damage] Average trigger velocity: </color>" + averageTriggerVelocity.Average());
+        //private void OnTriggerEnter2D(Collider2D collision)
+        //{
+        //    Debug.Log("<color=orange>[Momentum Damage] Trigger velocity was: </color>" + pickaxeController.rotationSpeed);
+        //    //float velocityValue = pickaxeController.rotationSpeed;
+        //    //averageTriggerVelocity.Add(velocityValue);
+        //    //Debug.Log("<color=orange>[Momentum Damage] Average trigger velocity: </color>" + averageTriggerVelocity.Average());
 
-            // Get the other collider's Health script
-            Health health = collision.GetComponent<Health>();
+        //    // Get the other collider's Health script
+        //    Health health = collision.GetComponent<Health>();
 
-            // Calculate momentum damage
-            momentumDamage = mass * pickaxeController.rotationSpeed * velocityToDamage * (1 + pickaxePower);
+        //    // Calculate momentum damage
+        //    momentumDamage = mass * pickaxeController.rotationSpeed * velocityToDamage * (1 + pickaxePower);
 
-            // Deal damage
-            if (health != null && pickaxeController.rotationSpeed > minimumRotationSpeed && health.currentHealth < momentumDamage)
-            {
-                health.TakeDamage(momentumDamage);
-            }
-        }
+        //    // Deal damage
+        //    if (health != null && pickaxeController.rotationSpeed > minimumRotationSpeed && health.currentHealth < momentumDamage)
+        //    {
+        //        health.TakeDamage(momentumDamage);
+        //    }
+        //}
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
