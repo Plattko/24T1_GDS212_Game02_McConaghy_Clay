@@ -15,6 +15,9 @@ namespace Plattko
         public int maxHealth;
         public float currentHealth { get; private set; }
 
+        private float invincibilityTime = 0.1f;
+        private bool canBeHit = true;
+
         private void Start()
         {
             sfxManager = GameObject.FindGameObjectWithTag("SFXManager").GetComponent<SFXManager>();
@@ -29,6 +32,8 @@ namespace Plattko
 
         public void TakeDamage(float damage)
         {
+            if (!canBeHit) return;
+            
             Debug.Log("Damage: " + damage);
             currentHealth -= damage;
             Debug.Log("Current health: " + currentHealth);
@@ -54,6 +59,15 @@ namespace Plattko
                     tileController.DestroyTile();
                 }
             }
+
+            StartCoroutine(TemporaryInvincibility());
+        }
+
+        private IEnumerator TemporaryInvincibility()
+        {
+            canBeHit = false;
+            yield return new WaitForSeconds(invincibilityTime);
+            canBeHit = true;
         }
     }
 }
