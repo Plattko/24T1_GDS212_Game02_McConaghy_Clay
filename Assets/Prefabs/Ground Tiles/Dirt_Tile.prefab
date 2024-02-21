@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7233654460365301637}
   - component: {fileID: 6666357680552872034}
   - component: {fileID: 7764637620323817588}
+  - component: {fileID: 488560668820831697}
   m_Layer: 0
   m_Name: Dirt_Tile
   m_TagString: Untagged
@@ -177,3 +178,21 @@ MonoBehaviour:
   - {fileID: 651532538, guid: da39710e1593e584eaaaccfa86dbea17, type: 3}
   - {fileID: -729793213, guid: da39710e1593e584eaaaccfa86dbea17, type: 3}
   maxPoints: 10
+--- !u!114 &488560668820831697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7387351133479216969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b9ff0d2061e7a442b1ba982d8f83da1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionSFX:
+  - {fileID: 8300000, guid: e6a2dd12931bc54458c001160e43920e, type: 3}
+  - {fileID: 8300000, guid: 6723750762cad494ab7df0c2b4356c48, type: 3}
+  - {fileID: 8300000, guid: 12619978bd691084f90bc7467c831840, type: 3}
+  - {fileID: 8300000, guid: 4ba87b78009bc9c43b657526c4df7261, type: 3}
+  - {fileID: 8300000, guid: 696a8a6882a50904684e73ca03527de6, type: 3}

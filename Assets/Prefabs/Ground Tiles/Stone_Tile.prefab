@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 931281709814986747}
   - component: {fileID: 1455364501147285362}
   - component: {fileID: 7314478760138908681}
+  - component: {fileID: 4229258761157502931}
   m_Layer: 0
   m_Name: Stone_Tile
   m_TagString: Untagged
@@ -177,3 +178,21 @@ MonoBehaviour:
   - {fileID: 1710068152, guid: da39710e1593e584eaaaccfa86dbea17, type: 3}
   - {fileID: -1814437261, guid: da39710e1593e584eaaaccfa86dbea17, type: 3}
   maxPoints: 20
+--- !u!114 &4229258761157502931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4097701829951783885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b9ff0d2061e7a442b1ba982d8f83da1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionSFX:
+  - {fileID: 8300000, guid: 9f0a2fdf835ff4a4fa46b3184107af84, type: 3}
+  - {fileID: 8300000, guid: dd65182281a40ad4fa0d0eae7796e256, type: 3}
+  - {fileID: 8300000, guid: 9cc542e4bbed7764e88f5746cd9656d2, type: 3}
+  - {fileID: 8300000, guid: 6543eba503385f547ae23091525c0e56, type: 3}
+  - {fileID: 8300000, guid: 378b63f16f2e4714b945ccb68247c2f0, type: 3}

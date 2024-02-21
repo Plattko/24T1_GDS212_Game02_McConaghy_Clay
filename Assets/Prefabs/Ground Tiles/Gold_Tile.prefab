@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2481890979490296102}
   - component: {fileID: 6939557161482953467}
   - component: {fileID: 4465519404076382821}
+  - component: {fileID: 4086271864078628483}
   m_Layer: 0
   m_Name: Gold_Tile
   m_TagString: Untagged
@@ -177,3 +178,21 @@ MonoBehaviour:
   - {fileID: -622119240, guid: da39710e1593e584eaaaccfa86dbea17, type: 3}
   - {fileID: 236669003, guid: da39710e1593e584eaaaccfa86dbea17, type: 3}
   maxPoints: 200
+--- !u!114 &4086271864078628483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1017111028660696241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b9ff0d2061e7a442b1ba982d8f83da1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionSFX:
+  - {fileID: 8300000, guid: db40ad9d0611c654f97bb22e5e3c530e, type: 3}
+  - {fileID: 8300000, guid: 2eca36c45c605b0458c31b5c653f4213, type: 3}
+  - {fileID: 8300000, guid: 217c77702a3b48146837864f1ad76452, type: 3}
+  - {fileID: 8300000, guid: 29ca0f6acefadbd41b1c58342fc230de, type: 3}
+  - {fileID: 8300000, guid: 898fd7023f46e734494d4df358235f07, type: 3}
