@@ -68,6 +68,8 @@ namespace Plattko
                 Debug.Log(i);
             }
             pointsRewarded = Mathf.Clamp(pointsRewarded, Mathf.RoundToInt(maxPoints * 0.5f), maxPoints);
+
+            PointsManager.UpdatePoints(pointsRewarded);
             
             Debug.Log("Times hit: " + timesHitCounter);
             Debug.Log("Points rewarded: " + pointsRewarded);
