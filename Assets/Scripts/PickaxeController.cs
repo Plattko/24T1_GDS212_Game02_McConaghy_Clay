@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 namespace Plattko
 {
@@ -11,6 +12,10 @@ namespace Plattko
 
         private Rigidbody2D rb;
         private TargetJoint2D targetJoint;
+
+        [SerializeField] private CinemachineVirtualCamera doNothingCamera;
+        [SerializeField] private CinemachineVirtualCamera framingTransposerCamera;
+        [SerializeField] private Transform framingTransposerFollow;
 
         private Vector3 mouseWorldPos;
 
@@ -34,9 +39,27 @@ namespace Plattko
             mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mouseWorldPos.z = 0f;
 
-            // Set target position of both the cursor point and pickaxe to the mouse's world position
             targetJoint.target = mouseWorldPos;
             cursorPointTargetJoint.target = mouseWorldPos;
+
+            if (Input.GetMouseButtonDown(1))
+            {
+                if (!framingTransposerCamera.enabled)
+                {
+                    framingTransposerCamera.Follow = framingTransposerFollow;
+                    framingTransposerCamera.enabled = true;
+                }
+            }
+
+            if (Input.GetMouseButtonUp(1))
+            {
+                if (framingTransposerCamera.enabled)
+                {
+                    doNothingCamera.transform.position = framingTransposerCamera.transform.position;
+                    framingTransposerCamera.Follow = null;
+                    framingTransposerCamera.enabled = false;
+                }
+            }
 
             // Clamp the pickaxe's maximum angular velocity to prevent it from spinning too much
             rb.angularVelocity = Mathf.Clamp(rb.angularVelocity, -maxSpin, maxSpin);
