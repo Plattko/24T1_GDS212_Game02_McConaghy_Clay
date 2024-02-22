@@ -37,7 +37,7 @@ namespace Plattko
         private void OnDisable()
         {
             PointsManager.OnPointUpdate -= UpdatePointsText;
-            PointsManager.OnPointUpdate += UpdatePointsAddedText;
+            PointsManager.OnPointUpdate -= UpdatePointsAddedText;
         }
 
         private void UpdatePointsText(int pointsRewarded)
