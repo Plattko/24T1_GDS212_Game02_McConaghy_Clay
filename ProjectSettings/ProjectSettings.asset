@@ -44,8 +44,8 @@ PlayerSettings:
   m_HolographicTrackingLossScreen: {fileID: 0}
   defaultScreenWidth: 1920
   defaultScreenHeight: 1080
-  defaultScreenWidthWeb: 1920
-  defaultScreenHeightWeb: 1080
+  defaultScreenWidthWeb: 2560
+  defaultScreenHeightWeb: 1440
   m_StereoRenderingPath: 0
   m_ActiveColorSpace: 1
   unsupportedMSAAFallback: 0
@@ -817,8 +817,8 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: 24T1_GDS212_Game02_McConaghy_Clay
-  metroPackageVersion: 
+  metroPackageName: 24T1GDS212Game02McConaghyClay
+  metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
@@ -826,7 +826,7 @@ PlayerSettings:
   metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: 24T1_GDS212_Game02_McConaghy_Clay
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: 24T1_GDS212_Game02
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0
